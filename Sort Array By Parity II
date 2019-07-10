@@ -1,0 +1,14 @@
+class Solution:
+	def sortArrayByParityII(self, A: List[int]) -> List[int]:
+		ind=0
+		tem1=[]
+		tem2=[]
+		for i in A:
+			if i%2==0:
+				tem1.append(i)
+			else:
+				tem2.append(i)
+		for i in tem1:
+			tem2.insert(ind,i)
+			ind+=2
+		return tem2
