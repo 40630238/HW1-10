@@ -1,0 +1,18 @@
+class Solution:
+    def search(self, nums: 'List[int]', target: 'int') -> 'int':
+        high = len(nums)
+        low = 0
+        midList = []
+        while low <= high:
+            mid = low + (high-low)//2
+            if mid not in midList:
+                midList.append(mid)
+            else:
+                return -1
+            if target == nums[mid]:
+                return mid
+            elif target < nums[mid]:
+                high = mid
+            else:
+                low = mid
+        return -1
