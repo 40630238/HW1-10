@@ -1,0 +1,13 @@
+class Solution:
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        d={}
+        for i in moves:
+            d[i] = d.get(i, 0) + 1 
+        if d.get('U') != d.get('D') or d.get('L') != d.get('R'): # 只要有一个不等，即不满足
+            return False
+        else:
+            return True
